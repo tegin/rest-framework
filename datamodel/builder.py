@@ -20,16 +20,16 @@ class DatamodelBuilder(models.AbstractModel):
 
     And register them in a global registry.
 
-    Every time an Odoo registry is built, the know datamodels are cleared and
+    Every time an Odoo registry is built, the known datamodels are cleared and
     rebuilt as well.  The Datamodel classes are built using the same mechanism
-    than Odoo's Models: a final class is created, taking every Datamodels with
+    as Odoo's Models: a final class is created, taking every Datamodels with
     a ``_name`` and applying Datamodels with an ``_inherits`` upon them.
 
     The final Datamodel classes are registered in global registry.
 
-    This class is an Odoo model, allowing us to hook the build of the
-    datamodels at the end of the Odoo's registry loading, using
-    ``_register_hook``. This method is called after all modules are loaded, so
+    This class is an Odoo model, allowing us to hook the building of the
+    datamodels at the end of the loading of Odoo's registry, using
+    ``_register_hook``. This method is called after all modules have been loaded, so
     we are sure that we have all the datamodels Classes and in the correct
     order.
 

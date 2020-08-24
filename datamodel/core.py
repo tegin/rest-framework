@@ -86,8 +86,8 @@ class DatamodelRegistry(object):
         self._loaded_modules.add(module)
 
 
-# We will store a DatamodeltRegistry per database here,
-# it will be cleared and updated when the odoo's registry is rebuilt
+# We will store a DatamodelRegistry per database here,
+# it will be cleared and updated when odoo's registry is rebuilt
 _datamodel_databases = DatamodelDatabases()
 
 
@@ -120,8 +120,8 @@ class MetaDatamodel(ModelMeta):
         # "load_datamodels" method, all the test datamodels would be loaded.
         # This should never be an issue when running the app normally, as the
         # Python tests should never be executed. But this is an issue when a
-        # test creates a test datamodels for the purpose of the test, then a
-        # second tests uses the "load_datamodels" to load all the addons of the
+        # test creates a test datamodel for the purpose of the test, then a
+        # second test uses the "load_datamodels" to load all the addons of the
         # module: it will load the datamodel of the previous test.
         if "tests" in self.__module__.split("."):
             return
