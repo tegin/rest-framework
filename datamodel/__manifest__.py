@@ -11,9 +11,7 @@
     "development_status": "Beta",
     "author": "ACSONE SA/NV, " "Odoo Community Association (OCA)",
     "maintainers": ["lmignon"],
-    "website": "https://acsone.eu/",
-    "depends": [],
-    "data": [],
-    "demo": [],
+    "website": "https://github.com/OCA/rest-framework",
+    "depends": ["base"],
     "external_dependencies": {"python": ["marshmallow", "marshmallow_objects"]},
 }
