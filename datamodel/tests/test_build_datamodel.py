@@ -431,6 +431,11 @@ class TestBuildDatamodel(DatamodelRegistryCase):
         self.assertEqual(instance.items[0].env, self.env)
         schema = instance.items[0].get_schema()
         self.assertEqual(schema._env, self.env)
+        self.assertEqual(self.env, self.env.user.env)
+        new_env = self.env.user.with_context(new_context_value=True).env
+        self.assertNotEqual(self.env, new_env)
+        instance = new_env.datamodels["parent"]()
+        self.assertEqual(new_env, instance.env)
 
 
 class TestRegistryAccess(TransactionDatamodelCase):
